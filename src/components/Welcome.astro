@@ -1,0 +1,152 @@
+---
+const tabs = [
+  { 
+    id: '-nosotros', 
+    label: 'Nosotros', 
+    content: `
+Telada Ingeniería Construcción y Minería – TEINCOMIN S.A.C. Constituida en el año 2011, especialistas en excavaciones verticales y sostenimiento Piques tubería forzada y chimeneas de equilibrio (con utilización de equipo elevador jaula trepadora STH 5 E) Operaciones Mineras Mecanizadas, Profundización, Desarrollo y Exploración, Proyectos en Centrales Hidroeléctricas, movimiento de tierras, excavación de taludes y accesos, Sostenimiento con Shotcrete proyectado y pernos de anclaje Minado convencional en labores horizontales verticales e inclinados.
+
+Objetivos:
+Compartir experiencia adquirida en los diferentes trabajos aplicando los conocimientos necesarios para el cumplimiento y satisfacción de nuestros clientes, comprometidos en realizar las buenas prácticas de nuestras operaciones unitarias con Seguridad, Calidad, Productividad, Responsabilidad Social y Ambiental.`
+  },
+  { 
+    id: 'mision', 
+    label: 'Mision Y Vision', 
+    content: `Mision:
+Brindar servicios en minería en todas sus etapas: preparación, desarrollo, explotación y servicios auxiliares; en construcción civil y energía: movimiento de tierras, tunelería, excavación de pozos inclinados y verticales, piques, taludes y aplicación de sostenimiento respectivo; desarrollando una gestión de calidad y excelencia.
+
+Vision:
+Ser la empresa líder reconocida a nivel nacional e internacional en el sector minero, civil e hidroeléctrico, actuando con responsabilidad social y con el equipo humano comprometido.`
+  },
+
+  { 
+    id: 'valores', 
+    label: 'Valores', 
+    content: `Trabajo en Equipo:
+El apoyo mutuo y el buen clima laboral entre los colaboradores permite el desarrollo eficiente de nuestras actividades.
+
+Profesionalismo:
+Es nuestra prioridad proteger la vida, identificando los peligros, valorando y controlando los riesgos dentro de al formación de nuestros stakeholders.
+
+INTEGRIDAD:
+Sobresale la honestidad y transparencia en el trabajo y el recurso humano que labore en la organización en cualquier momento que se brinde el servicio
+
+COMPROMISO:
+Prima el alto grado de entrega de parte de nuestro personal por realizar nuestras actividades buscando el éxito económico mutuo.
+
+RESPETO:
+Trabajamos respetando las costumbres de la comunidad donde operamos, dando el máximo esfuerzo por realizar trabajos con un valor agregado que satisface las expectativas y genera mayores oportunidades de relaciones comerciales.`
+  },
+
+  { 
+    id: 'politicas', 
+    label: 'Políticas', 
+    content: `TEINCOMIN S.A.C., Empresa Peruana, dedicada al desarrollo de proyectos subterráneos; especializado en excavaciones verticales, horizontales, sostenimiento y servicios auxiliares; para el sector de minas, hidroeléctrico y civil.
+
+Valorar el recurso humano como el principal activo en todas las operaciones de la empresa y priorizamos la gestión de seguridad y salud en el trabajo, medio ambiente y calidad, comprometiéndose a:
+
+1. Brindar servicios con soluciones integrales a través de la estandarización y cumpliendo los requisitos en nuestras operaciones para lograr la satisfacción de los clientes.
+2. Asegurar un ambiente de trabajo seguro y saludable enmarcado, a través de la eliminación de los peligros y reducción de los riesgos que pudieran afectar la seguridad y la salud de nuestros trabajadores.
+3. Promover la cultura, cuidado y protección del medio ambiente, a través de la prevención y control de los impactos ambientales significativos que pudieran derivar de nuestras actividades, instalaciones y servicios.
+4. Utilizar los recursos de manera sostenible, con una gestión eficiente en el manejo de los residuos generados por nuestras actividades.
+5. Capacitar, motivar y escuchar opiniones de nuestros colaboradores, fomentando en ellos una cultura de seguridad y salud en el trabajo y realizar programas de prevención planificados para evitar las lesiones, enfermedades ocupacionales e incidentes.
+6. Garantizar la participación y consulta de nuestros colaboradores, y de los representantes de los colaboradores, en la implementación y mejora del sistema integrado de gestión.
+7. Promover el cumplimiento de los requisitos legales y otros requisitos vigentes aplicables.
+8. Propiciar sistemáticamente la mejora continua de los procesos y el desempeño en nuestro sistema integrado de gestión.
+
+Esta política es de cumplimiento obligatorio por todo el personal de TEINCOMIN S.A.C, proveedores y subcontratistas con los que trabajamos.`
+  },
+
+  { 
+    id: 'alcance', 
+    label: 'Alcance SIG', 
+    content: `
+El Alcance del Sistema Integrado de Gestión (Calidad, Seguridad, Salud y Medio Ambiente), de la empresa TEINCOMIN S.A.C, bajo las Normas ISO 9001:2015, ISO 14001:2015 e ISO 45001:2018 es:
+
+“DESARROLLO DE PROYECTOS SUBTERRÁNEOS ESPECIALIZADOS EN EXCAVACIONES VERTICALES, HORIZONTALES, SOSTENIMIENTO Y SERVICIOS AUXILIARES.” 
+    `
+  },
+];
+---
+
+<section id="nosotros" class="py-8 bg-gray-200 border-b border-zinc-200 scroll-mt-20">
+  <!-- Contenedor principal que une las pestañas y el contenido -->
+<div class="max-w-7xl mx-auto py-12 px-6">
+  
+  <!-- Tus Pestañas (Se mantienen igual) -->
+  <div class="flex flex-wrap gap-4 border-b border-zinc-200 mb-8" id="tab-container">
+    {tabs.map((tab, index) => (
+      <button 
+        class={`pb-4 font-bold text-sm uppercase tracking-wider transition-colors ${index === 0 ? 'text-orange-600 border-b-2 border-orange-600' : 'text-zinc-400 hover:text-orange-600'}`}
+        data-target={tab.id}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+  <!-- Contenido Dinámico con Teo a un costado -->
+  {tabs.map((tab, index) => (
+  <div id={tab.id} class={`tab-content ${index === 0 ? '' : 'hidden'}`}>
+    
+    <!-- Cambiamos el orden: Imagen primero, luego Texto -->
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      
+      <!-- Imagen de Teo (Ahora a la izquierda) -->
+      <div class="w-48 shrink-0">
+        <img 
+          src="/public/Images/Teo/inf1.png" 
+          alt="Teo" 
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+      <!-- Bloque de Texto (Ahora a la derecha) -->
+      <div class="flex-1">
+        <h2 class="text-2xl font-extrabold text-zinc-900 mb-6">{tab.label}</h2>
+        <p class="text-zinc-600 leading-relaxed whitespace-pre-line">{tab.content}</p>
+      </div>
+
+    </div>
+  </div>
+))}
+</div>
+</section>
+
+<script>
+  const container = document.querySelector('#tab-container');
+  
+  if (container) {
+    container.addEventListener('click', (e) => {
+      // Usamos 'as' o una verificación de tipo para que TS no se queje
+      const target = e.target as HTMLElement;
+      const button = target.closest('button');
+      
+      if (!button) return;
+
+      const targetId = button.getAttribute('data-target');
+      
+      // 1. Limpiar botones (estilos)
+      container.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('text-orange-600', 'border-b-2', 'border-orange-600');
+        btn.classList.add('text-zinc-400');
+      });
+      
+      // 2. Activar botón clickeado
+      button.classList.add('text-orange-600', 'border-b-2', 'border-orange-600');
+      button.classList.remove('text-zinc-400');
+
+      // 3. Ocultar todos los contenidos
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      // 4. Mostrar el objetivo
+      if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.classList.remove('hidden');
+        }
+      }
+    });
+  }
+</script>

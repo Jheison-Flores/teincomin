@@ -1,0 +1,68 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Especialistas en excavaciones subterráneas, obras civiles y soluciones integrales para el sector minero." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | TEINCOMIN</title>
+		
+		<!-- Fuentes corporativas e institucionales (Google Fonts) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-[#FBFBFD] text-[#1D1D1F] font-sans antialiased selection:bg-orange-600 selection:text-white">
+		
+		<!-- Navbar fija con la identidad de Teincomin -->
+		<div class="fixed top-0 left-0 w-full z-50">
+			<Navbar />
+		</div>
+
+		<!-- Contenido dinámico de las páginas -->
+		<main class="pt-20">
+			<slot />
+		</main>
+
+		<!-- Footer global corporativo -->
+		<footer class="bg-[#111] text-zinc-400 py-12 border-t border-zinc-800">
+			<div class="max-w-7xl mx-auto px-6 text-center text-sm">
+				<p>&copy; {new Date().getFullYear()} TEINCOMIN S.A.C. Todos los derechos reservados.</p>
+			</div>
+		</footer>
+
+	</body>
+</html>
+
+<style is:global>
+	body {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+	}
+	/* Custom scrollbar limpia al estilo corporativo */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: #F1F1F1;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #C1C1C1;
+		border-radius: 5px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #A8A8A8;
+	}
+</style>

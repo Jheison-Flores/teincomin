@@ -1,0 +1,395 @@
+---
+// 1. Array con los 12 proyectos reales de la empresa y sus especificaciones técnicas
+const projects = [
+  {
+    id: 'agromin',
+    title: 'AGROMIN LA BONITA',
+    location: 'Acarí, Arequipa - Perú',
+    description: 'Proyecto de excavación subterránea y fortificación en la unidad operativa de Agromin La Bonita.',
+    details: `PREPARACIÓN GALERIAS PARA EXPLOTACIÓN Y PROFUNDIZACION DE MINA.
+    Excavación y sostenimiento.
+    -Rampa 3.0m x 3.0m, pendiente 10%, L=500.0m
+    -Subniveles de 1.8m x 1.5m; de 1.5m x 1.2m
+    -Cruceros / Galerías de 2.4m x 2.4m, L= 520.0m
+    -Chimeneas de ventilación 1.5m x 2.4m, L=100.0m
+    -Piques de sección 1.5m x 4.2m.`,
+    image: '/public/Images/agromin.png'
+  }
+
+  ,
+  {
+    id: 'ayepsa',
+    title: 'Ayepsa. Pías La Libertad',
+    location: 'La Libertad - Perú',
+    description: 'Perforación y profundización vertical avanzada de piques de gran diámetro.',
+    details: 
+    `Construcción
+de la Chimenea de Equilibrio 80 m Y Chimenea Tubería Forzada 164 m ..( con la Utilización
+de Elevador Jaula Trepadora Alimak STH 5 E (Unidad Propulsora Eléctrica)
+
+Chimenea de Equilibrio
+1. Excavación de la Chimenea Piloto Tipo de Roca III y IVA (granodiorita con fallas y fracturas)
+Sección
+1 6 x 1 6 m Soporte puntual pernos de fricción split set y malla
+2. Ampliación de la Chimenea Piloto Tipo de Roca III, IVA y IVB (granodiorita con fallas y fracturas)
+Sección 3 0 m Diámetro Fortificación Cimbras circulares a cada 1 0 m de avance descendente, concreto, pernos
+cementados 19 mm x 1 8 m Malla electrosoldada 4 x 4 y Hormigón proyectado e= 3
+II
+Chimenea Tubería Forzada
+Operaciones
+Unitarias con la Utilización de Elevador Jaula Trepadora Alimak SRH 5 E ascendente Sección 2 4 m Ø Tipo
+de
+Roca II y III, Granodiorita
+Barrenación
+de taladros con máquina neumática Stopper 250 RNP (taladros contorno espaciado a 0 30 m)
+Voladura
+controlada
+Soporte
+puntual con Split set de 5 pies Sostenimiento definitivo Pernos helicoidales 19 mm x 1 80 m Malla
+electrosoldada 4 x 4 y Shotcrete vía húmeda e= 3 Equipos utilizados ( Shotcretera Aliva REED 215)`
+    ,
+    image: '/public/Images/ayepsa.png'
+  },
+  {
+    id: 'carranza',
+    title: 'Carranza Ingenieros Minería & Construcción S.A.',
+    location: 'San Marcos, Cajamarca - Perú',
+    description: 'Proyectos de infraestructura subterránea y soporte estructural.',
+    details: 
+    `Construcción del Pique Vertical
+Trabajos ejecutados en 02 Etapas:
+1. Chimenea Piloto: Longitud=88.00 m;
+Di ámetro: 2.0m. Inclinación 90
+Excavación en Roca Tipo I, II
+2. Ampliación de Piloto, forma descendente: Longitud= 88.00m.
+Ø Diámetro: 2.80m. Inclinación 90
+Excavación en Roca Tipo I, II y III, Granodiorita.
+Sostenimiento puntual. Pernos helicoidales y Split set.`,
+    image: '/public/Images/carranza.png'
+  },
+  {
+    id: 'chimenea',
+    title: 'Chimenea de Ventilación, Consorcio Yanango',
+    location: 'Junín - Perú',
+    description: 'Construcción mecánica de chimenea estratégica para ventilación principal.',
+    details: `
+    Trabajos ejecutados en 01 Etapa:
+Excavación de Chimenea Ventilación: Longitud= 68.86 m; Sección: 2.60m Ø Diámetro en Roca Tipo II, III y IV.
+Sostenimiento de la Chimenea de Ventilación.
+Operaciones Unitarias Descendente:
+Perforación de taladros con máquinas neumáticas Sinker. Longitud barrenación = 4.0 pies. Voladura
+controlada.
+Limpieza manual y extracción de desmonte semimecanizada
+Sostenimiento:
+Shotcrete Preventivo a e= 5.0 cm.
+Malla electrosoldada de 4 x 4
+Pernos Cementado Puntuales: Ø19mm.Longitud = 1.50m.
+Shotcrete Definitivo a e= 10.0 cm.
+Cronograma de construcción: 3.0 meses
+Rendimiento x mes : 25.0m.`,
+    image: '/public/Images/yanango.png'
+  },
+  {
+    id: 'caudalosa',
+    title: 'Cía. Minera Caudalosa S.A.',
+    location: 'Huancavelica - Perú',
+    description: 'Operaciones de acarreo, desarrollo de galerías y sostenimiento.',
+    details: `
+    Construcción de Chimenea de Ventilación y sostenimiento del sistema integrado de mina. Raice Climber
+principal y auxiliar. Desde el 2013 a Mayo del 2015. Total metraje desarrollado = 1,500 m.
+Objetivo: Ventilación, Waste pass y Ore pass
+Profundización Mina Subterránea
+Excavación en Roca Tipo IIIB, IVA, IVB y VA (terreno morrenico a cuaternario superficial). Avance con cimbras
+metálicas conexión a superficie.
+Rendimiento / mes: 75.0m.`
+    ,
+    image: '/public/Images/caudalosa.png'
+  },
+  {
+    id: 'kolpa',
+    title: 'Compañía Minera Kolpa S.A.',
+    location: 'Huancavelica - Perú',
+    description: 'Ingeniería geotécnica y control de estabilidad de taludes y accesos.',
+    details: `
+    •Construcción de Subniveles. Ventilación y servicios. Total metrados a la actualidad : 12,100.0 m
+•4 años y 3 meses sin accidentes hasta la actualidad desde el ingreso.
+Programa de Ejecución:
+Desde Mayo 2015. Equipo: Alimak STH 5EE Doble Drive. Laboreo minero.
+Sostenimiento: Shotcrete, Pernos helicoidales con resina, cintras straps y cuadros metálicos
+Ejecución de Proyecto de Sistema de Bombeo integral de la mina.`
+    ,
+    image: '/public/Images/kolpa.jpg'
+  },
+  {
+    id: 'jme',
+    title: 'Constructora JME S.A.C.',
+    location: 'Yuracmarca, Huaylas, Ancash - Perú',
+    description: 'Instalación de plataformas pesadas y estructuras modulares subterráneas.',
+    details: `
+    Construcción del Pique en caída, con utilización de elevador jaula trepadora.
+Proceso de construcción en 02 Etapas:
+1.Chimenea Piloto: Longitud = 48.24 m; Sección: 3.0m. Diámetro Inclinación 90
+Excavación en Roca Tipo I, II y III, Granodiorita.
+2. Ampliación de Piloto en forma Descendente: Longitud = 48.24 m. Diámetro: 12.20m Ø. Inclinación 90
+Excavación en Roca Tipo I, II y III, Granodiorita.
+Operaciones Unitarias:
+Preparación de taladros con máquinas neumáticas (longitud= 08 pies), Limpieza
+(manual / mecanizada) y
+Avance x Ciclo de Operaciones: 2.10 m. /ciclo; Ciclo / Avance = 2.5 Turnos de trabajo.
+Equipos Utilizados:
+Bomba de Concreto THOR 546, Winche de Izaje PIKROSE, Grúa Móvil TEREX DEMAG AC
+40TN, Perforadoras Sinker RNS83FS, Perforadoras JACK LEG 250, Miniexcavadora JCB 8027 ZTS.
+Cronograma de Operaciones: 105 días.`
+    ,
+    image: '/public/Images/yuracmarca.png'
+  },
+  {
+    id: 'ice',
+    title: 'ICE Ingenieros S.A.',
+    location: 'Cochabamba - Bolivia',
+    description: 'Infraestructura civil e hidráulica internacional.',
+    details: `
+    Construcción
+del Pique en caída con utilización de Elevador Jaula Trepadora Alimak STH 5 E
+Trabajos realizados en 02 Etapas:
+Excavación
+de Chimenea Piloto Longitud= 143 0 m Sección 1 8 x 1 80 m Inclinación 90
+Excavación
+en Roca Tipo III Limonita fracturada 68 0 m y Morrenico Cuarcita Limonita 80 m
+Operaciones
+en forma ascendente
+Operaciones
+Unitarias Ventilación, Anclaje de carril, Sostenimiento puntual con Split set, perforación de talados 4 y 6 pies,
+Voladura controlada
+Ampliación
+de Piloto en forma descendente Longitud= 143 0 m Ø Diámetro= 3 80 m Inclinación 90
+Operaciones
+unitarias descendente
+Excavación
+en Roca Tipo III Limonita fracturada 68 0 m y Morrenico Cuarcita Limonita 80 m
+Operaciones
+Unitarias Perforación de taladros con máquinas neumáticas ( 4 pies), Limpieza ( y Sostenimiento
+Avance
+x Ciclo de Operaciones 1 20 m ../ciclo Ciclo Avance 2 0 Turnos de trabajo
+Equipos
+Utilizados Bomba de Concreto SPRAYCRET, Grúa Móvil 20 TN, Perforadoras Sinker RNS 83 FS, Perforadoras JACK LEG 250
+Fortificación
+instalada en la columna del Pique en Caída
+1.Malla Electrosoldada 4 x 4
+2.Pernos Cementados Sistemáticos Ø 25 mm x 2 10 m
+3.Spilling bar Ø 25 mm x 1 75 m
+4.Hormigón proyectado Shotcrete e= 5 0 cm
+5.Concreto 175 kg ../cm 2`
+    ,
+    image: '/public/Images/ice.png'
+  },
+
+  {
+    id: 'agromin',
+    title: 'Agromin la Bonita S.A.C',
+    location: 'Acari - Arequipa',
+    description: 'Construcción de Chimeneas con elevador jaula trepadora STH-5E',
+    details: `
+    Construcción de Chimeneas con elevador jaula trepadora STH-5E: Ventilación, servicios y exploración en vetas
+de 75 a 88º; maderamen: camino -winze y sostenimiento puntual con pernos de fricción. Total proyectos: 06
+ejecutados; 02 proyectos por desarrollar longitud = 180.0m.
+Excavación en Roca Tipo IIIA, IIIB, IVA. Longitudes: Ch. 668 = 96.0m ; Ch.564 = 94.0m. Ch. 640 =106 y Ch.757
+=140m.
+Rendimiento/mes: 75.0m.
+Preparación mina convencional:
+cruceros, galerías, chimeneas.
+Preparación tajeos: subnivel, galerías`
+    ,
+    image: '/public/Images/agromin2.jpeg'
+  },
+  {
+    id: 'kunming',
+    title: 'Kunming Engineering Corporation Limited',
+    location: 'Locotal, Cochabamba - Bolivia',
+    description: 'Excavaciones verticales de gran profundidad y piques industriales.',
+    details: `
+    Construcción del Pique en caída, Longitud = 264.57m. Inclinación = 55
+°°. Operaciones unitarias con elevador
+jaula trepadora ascendente y descendente.
+Construcción en 02 Etapas:
+Excavación chimenea piloto = 1.80m. Diámetro
+Ampliación del piloto en forma descendente d= 3.70m.
+Sostenimiento: pernos helicoidales, malla electrosoldada y shotcrete e=3”.
+Cronograma de Operaciones: 100.0 días
+Rendimiento x mes: 88.0 m. (piloto + ampliación)`
+    ,
+    image: '/public/Images/kunming.png'
+  },
+  {
+    id: 'kolpa',
+    title: 'Compañía Minera Kolpa S.A.',
+    location: 'Huancavelica - Perú',
+    description: 'Excavación y sostenimiento.',
+    details: `
+    -Shotcrete vía Húmeda e= 2”, 3 ” y
+-Cruceros y Galerías de 3.5m x 3.0m, L=350m
+-Cámaras de carguío 4.0m x 4.0m x 12.0m.
+-Refugios de 2.0m x 2.0m x 2m, 15 Unid.
+-Cámara de bombeo, 4 Unid.
+-Chimeneas de ventilación d=2.40m, L=158m
+-Soporte: Pernos helicoidales y cimbras`
+    ,
+    image: '/public/Images/kolpa2.png'
+  },
+  {
+    id: 'porco',
+    title: 'Mina Porco Potosí',
+    location: 'Sociedad Minera Illapa S.A. - Bolivia',
+    description: 'Operación y control de frentes mineros tradicionales mecanizados.',
+    details: `
+    •Mina polimetálica Plata, Cobre y Estaño. Construcción de Chimenea, Diámetro 2.0m. Inclinación 74 °°. Utilización
+elevador jaula trepadora STH 5E. Sostenimiento: pernos hydrabolt de 5 pies sistemáticos
+Objetivo: Ventilación de mina.
+Excavación en Roca Tipo IIIA, IIIB, Longitud = 180.0m.: CH. RIIIA Alimak RC.
+Cronograma de construcción (días): 40 días.
+Rendimiento/mes: 130.0m.,`,
+    image: '/public/Images/porco.png'
+  }
+];
+---
+
+<section id="proyectos" class="py-24 bg-white border-b border-zinc-200 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Cabecera de la Sección -->
+    <div class="max-w-3xl mb-16 space-y-2">
+      <span class="block text-xs font-bold tracking-wider text-orange-600 uppercase">PORTAFOLIO DE OBRAS</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
+        Proyectos Nacionales e Internacionales Ejecutados
+      </h2>
+    </div>
+
+    <!-- Cuadrícula de 12 Tarjetas de Proyecto -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {projects.map((project) => (
+        <div class="space-y-4 flex flex-col justify-between border border-zinc-200 p-4 rounded-sm bg-zinc-50/30 shadow-2xs hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <!-- Imagen con Recorte Asimétrico Superior Estilo Poderosa -->
+            <div class="w-full h-40 bg-zinc-100 rounded-tr-[40px] overflow-hidden border border-zinc-200/60">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Título Principal -->
+            <h3 class="text-base font-extrabold text-zinc-900 leading-snug uppercase min-h-0.5 flex items-center">
+              {project.title}
+            </h3>
+
+            <!-- Ubicación -->
+            <span class="block text-[11px] font-bold text-orange-600 tracking-wide uppercase">
+              📍 {project.location}
+            </span>
+
+            <!-- Descripción básica -->
+            <p class="text-xs text-zinc-600 leading-relaxed font-normal line-clamp-3">
+              {project.description}
+            </p>
+          </div>
+
+          <!-- Botón de Ficha Técnica que abre el Modal -->
+          <div class="pt-2">
+            <button 
+              data-project-id={project.id}
+              class="open-modal-btn w-full inline-flex items-center justify-between bg-zinc-800 hover:bg-zinc-900 text-white rounded-xs overflow-hidden group transition-all"
+            >
+              <span class="px-3 py-2 text-xs font-bold tracking-wide">
+                LEER MÁS
+              </span>
+              <span class="bg-orange-500 p-2.5 flex items-center justify-center group-hover:bg-orange-600 transition-colors">
+                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- ==================== MODAL DINÁMICO (VENTANA EMERGENTE) ==================== -->
+  <!-- Línea Corregida: Quitamos 'flex' de aquí para que 'hidden' funcione por defecto -->
+<div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <!-- Fondo translúcido oscuro -->
+    <div id="modal-overlay" class="absolute inset-0 bg-zinc-950/70 backdrop-blur-xs"></div>
+    
+    <!-- Contenedor del Modal -->
+    <div class="relative bg-white border border-zinc-200 w-full max-w-2xl rounded-sm shadow-2xl z-10 overflow-hidden flex flex-col md:flex-row">
+      
+      <!-- Imagen Izquierda en el modal -->
+      <div class="w-full md:w-1/2 h-48 md:h-auto bg-zinc-100">
+        <img id="modal-image" src="" alt="" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Datos a la Derecha -->
+      <div class="w-full md:w-1/2 p-6 flex flex-col justify-between space-y-6">
+        <div class="space-y-3">
+          <span id="modal-location" class="text-xs font-bold text-orange-600 uppercase tracking-wider"></span>
+          <h3 id="modal-title" class="text-xl font-black text-zinc-900 uppercase tracking-tight"></h3>
+          <hr class="border-zinc-200" />
+          <h4 class="text-xs font-bold text-zinc-400 uppercase tracking-wide">Especificaciones Técnicas:</h4>
+          <p id="modal-details" class="text-xs text-zinc-600 leading-relaxed font-normal"></p>
+        </div>
+
+        <!-- Botón de Cerrar Modal -->
+        <button id="close-modal-btn" class="w-full bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold py-2.5 rounded-xs transition-colors border border-zinc-200">
+          CERRAR FICHA
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LÓGICA DE CONTROL DEL MODAL ==================== -->
+<script define:vars={{ projects }}>
+  const modal = document.getElementById('project-modal');
+  const overlay = document.getElementById('modal-overlay');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  
+  const mTitle = document.getElementById('modal-title');
+  const mLocation = document.getElementById('modal-location');
+  const mDetails = document.getElementById('modal-details');
+  const mImage = document.getElementById('modal-image');
+
+  // Abre el modal cargando los datos correspondientes
+  document.querySelectorAll('.open-modal-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const pId = button.getAttribute('data-project-id');
+      const data = projects.find(p => p.id === pId);
+      
+      if (data) {
+            mTitle.textContent = data.title;
+            mLocation.textContent = `📍 ${data.location}`;
+            mDetails.textContent = data.details;
+            mImage.src = data.image;
+            mImage.alt = data.title;
+            
+            // CORRECCIÓN AQUÍ: Quitamos hidden y activamos flex
+            modal.classList.remove('hidden');
+            modal.classList.add('flex'); 
+            document.body.style.overflow = 'hidden';
+        }
+    });
+  });
+
+  // Funciones para cerrar el modal
+  const closeModal = () => {
+  // CORRECCIÓN AQUÍ: Quitamos flex y regresamos a hidden
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    };
+
+  closeModalBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+</script>

@@ -1,0 +1,41 @@
+---
+// Importa tus imágenes aquí o usa una lista de rutas
+const clients = [
+  { name: 'Poderosa', src: '/public/Images/Clientes/poderosa.png' },
+  { name: 'Kolpa', src: '/public/Images/Clientes/kolpa.png' },
+  { name: 'Orex', src: '/public/Images/Clientes/orex.png' },
+  { name: 'Aguas', src: '/public/Images/Clientes/aguas.png' },
+  { name: 'Caudalosa', src: '/public/Images/Clientes/caudalosa.png' },
+  { name: 'Kunming', src: '/public/Images/Clientes/kunming.png' },
+  { name: 'Sierra', src: '/public/Images/Clientes/sierra.jpeg' },
+  { name: 'Sinchi', src: '/public/Images/Clientes/sinchi.png' },
+  { name: 'Balzola', src: '/public/Images/Clientes/balzola.png' },
+  { name: 'JME', src: '/public/Images/Clientes/jme.png' },
+  { name: 'Celepsa', src: '/public/Images/Clientes/celepsa.gif' },
+  { name: 'Ice', src: '/public/Images/Clientes/ice.png' },
+  // Agrega el resto de tus logos...
+];
+---
+
+<section class="py-24 bg-gray-400 shadow-lg shadow-orange-900/10">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <!-- Título con más impacto -->
+    <h2 class="text-xs font-bold text-orange-600 uppercase tracking-[0.3em] mb-4">Confían en nosotros</h2>
+    <p class="text-4xl md:text-5xl font-black text-zinc-950 mb-16">Aliados Estratégicos</p>
+
+    <!-- Grid de Logos con Estilo Tarjeta -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      {clients.map((client) => (
+       <div class="group bg-white/70 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-orange-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+          <div class="flex items-center justify-center h-20 overflow-hidden">
+            <img 
+              src={client.src} 
+              alt={client.name} 
+              class="max-h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

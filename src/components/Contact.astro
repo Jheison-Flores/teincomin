@@ -1,0 +1,88 @@
+---
+const contactInfo = {
+  address: 'Car. Carretera Central Km 17 Mza. e Lote. 1 Asc. Asociacion Praderas de Pa (a 2 Cdra del Paradero de Huaycan)',
+  email: 'floresdeiner2003@gmail.com',
+  hours: 'Lun - Vie: 8:00 AM - 6:00 PM / Sáb: 8:00 AM - 1:00 PM',
+};
+---
+
+<section id="contacto" class="py-24 bg-zinc-50 border-b border-zinc-200 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Columna Izquierda: Información -->
+      <div class="lg:col-span-5 space-y-8">
+        <div class="space-y-2">
+          <span class="block text-xs font-bold tracking-wider text-orange-600 uppercase">CANALES OFICIALES</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
+            Conectemos su próximo proyecto institucional
+          </h2>
+          <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+            Estamos listos para evaluar los requerimientos técnicos de su obra minera o civil. Complete el formulario y un especialista se pondrá en contacto con su representada.
+          </p>
+        </div>
+
+        <div class="space-y-6 border-t border-zinc-200 pt-8">
+          <div>
+            <span class="block text-xs font-bold uppercase tracking-wider text-zinc-400">Ubicación Principal</span>
+            <span class="block mt-1 text-base font-bold text-zinc-900">{contactInfo.address}</span>
+          </div>
+          <div>
+            <span class="block text-xs font-bold uppercase tracking-wider text-zinc-400">Correo Electrónico</span>
+            <a href={`mailto:${contactInfo.email}`} class="block mt-1 text-base font-bold text-zinc-900 hover:text-orange-600 transition-colors">
+              {contactInfo.email}
+            </a>
+          </div>
+          <div>
+            <span class="block text-xs font-bold uppercase tracking-wider text-zinc-400">Horario de Atención</span>
+            <span class="block mt-1 text-sm text-zinc-600 font-normal">{contactInfo.hours}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Formulario Técnico -->
+      <div class="lg:col-span-7 bg-white p-8 border border-zinc-200 rounded-sm shadow-xs">
+        <!-- AQUÍ SE CAMBIÓ EL FORMULARIO PARA QUE FUNCIONE -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          
+          <!-- REEMPLAZA TU_CLAVE_AQUI CON TU CLAVE REAL DE WEB3FORMS -->
+          <input type="hidden" name="access_key" value="fc688934-e146-4f64-841e-27d5dfaa68c0">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-xs font-bold text-zinc-800 uppercase tracking-wide mb-2">Nombres y Apellidos</label>
+              <input type="text" name="name" id="name" required class="w-full bg-zinc-50 border border-zinc-200 rounded-xs px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:border-zinc-500 font-normal" placeholder="Ej. Juan Pérez" />
+            </div>
+            <div>
+              <label for="company" class="block text-xs font-bold text-zinc-800 uppercase tracking-wide mb-2">Empresa / Representada</label>
+              <input type="text" name="company" id="company" class="w-full bg-zinc-50 border border-zinc-200 rounded-xs px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:border-zinc-500 font-normal" placeholder="Ej. Minera Central S.A." />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-xs font-bold text-zinc-800 uppercase tracking-wide mb-2">Correo Corporativo</label>
+              <input type="email" name="email" id="email" required class="w-full bg-zinc-50 border border-zinc-200 rounded-xs px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:border-zinc-500 font-normal" placeholder="juan.perez@empresa.com" />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-bold text-zinc-800 uppercase tracking-wide mb-2">Teléfono de Contacto</label>
+              <input type="tel" name="phone" id="phone" class="w-full bg-zinc-50 border border-zinc-200 rounded-xs px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:border-zinc-500 font-normal" placeholder="+51 999 999 999" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-bold text-zinc-800 uppercase tracking-wide mb-2">Detalle de su Requerimiento o Proyecto</label>
+            <textarea name="message" id="message" rows="4" required class="w-full bg-zinc-50 border border-zinc-200 rounded-xs px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:border-zinc-500 font-normal resize-none" placeholder="Describa brevemente los alcances del proyecto..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full flex items-center justify-between bg-zinc-800 hover:bg-zinc-900 text-white rounded-md overflow-hidden group transition-all">
+            <span class="w-full text-center px-5 py-3.5 text-xs font-bold tracking-wider uppercase">Enviar Mensaje Institucional</span>
+            <span class="bg-orange-500 p-3.5 flex items-center justify-center group-hover:bg-orange-600 transition-colors">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

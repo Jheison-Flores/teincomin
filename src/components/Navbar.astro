@@ -1,0 +1,54 @@
+---
+const links = [
+  { name: 'Inicio', href: '#' },
+  { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Servicios', href: '#servicios' },
+  { name: 'Proyectos', href: '#proyectos' },
+  { name: 'Equipos', href: '#equipos'},
+  { name: 'Publicaciones', href: '#publicaciones'},
+  { name: 'Contacto', href: '#contacto' },
+  
+];
+---
+
+<nav class="w-full bg-linear-to-r from-orange-400 to-orange-100/80 backdrop-blur-md border-b border-zinc-200/50 fixed top-0 z-50 px-6">
+  <!-- Quitamos el max-w-7xl mx-auto de aquí para que el logo toque el borde izquierdo -->
+  <div class="h-20 flex items-center justify-between">
+    
+    <!-- LOGO (Ahora queda libre para alinearse al borde) -->
+    <a href="#" class="flex items-center shrink-0">
+      <img 
+        src="/public/Images/logo.png" 
+        alt="TEINCOMIN Logo" 
+        class="h-40 w-130 object-contain" 
+      />
+    </a>
+
+    <!-- MENÚ Y BOTÓN (Los envolvemos en un contenedor centrado/derecha) -->
+    <div class="flex items-center gap-8 max-w-7xl w-full justify-end">
+      
+      <!-- En tu sección de enlaces dentro de Navbar.astro -->
+        <div class="hidden md:flex items-center space-x-10">
+        {links.map((link) => (
+            <a 
+            href={link.href} 
+            class="text-[15px] font-bold uppercase tracking-widest text-black hover:text-orange-600 transition-all duration-300 transform hover:scale-105 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
+            >
+            {link.name}
+            </a>
+        ))}
+        </div>
+      
+
+      <a href="#contacto" class="hidden md:block text-xs font-semibold uppercase bg-zinc-950 text-white px-5 py-2.5 rounded-full hover:bg-orange-600 transition-all">
+        Trabaja con nosotros
+      </a>
+
+      <button id="menu-btn" class="md:hidden p-2 text-zinc-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,79 @@
+---
+// Definimos los iconos SVG directamente para cada servicio
+const services = [
+  {
+    title: 'Excavaciones Subterráneas',
+    description: `
+    • Ampliación de Pozos Verticales Túnel Inclinado y Sostenimiento Operaciones Descendente.
+    • Excavación de Chimeneas de Ventilación en Roca IIIB, IVA y Morrenico.
+    • Perforación y Voladura controlada.
+    • Sostenimiento con shotcrete , cimbras y pernos de anclaje.`,
+    btnText: 'Contactar Asesor',
+    icon: `<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.9c-.2.5-.1 1 .3 1.3L8 12l-2 9h2l1.5-7 3.5 3.5 1.5-6.5Z"/>`
+  },
+  {
+    title: 'Centrales Hidroeléctricas',
+    description: `
+    • Excavación: Plataformas, Accesos, Talud, Túnel Inclinado: Equilibrio, Presión y Ventilación.
+    • Excavación de Pozos Verticales de diferentes secciones y longitudes.
+    • Ampliación y Sostenimiento de Piques Pozos Verticales`,
+    btnText: 'Contactar Asesor',
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/>`
+  },
+  {
+    title: 'Tabajos especiales',
+    description: `
+• Ampliación de Pozos Verticales – Chimeneas a D>6.0m y Sostenimiento Operaciones Descendente.
+• Sostenimiento de Chimeneas excavadas con Raise Borer.
+• Excavación en Roca IIIB, IVA y en morrenico.`
+    ,
+    btnText: 'Contactar Asesor',
+    icon: `<path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-2-2"/><path d="M9 9h.01"/><path d="M9 13h.01"/><path d="M9 17h.01"/>`
+  },
+  {
+    title: 'Movimiento de tierras',
+    description: `
+    • Perforación y Voladura controlada dentro de zonas urbanas.
+    • Limpieza y eliminación de material fragmentado.
+    • Nivelación, topografía y trabajos de ingeniería.`,
+    btnText: 'Contactar Asesor',
+    icon: `<path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7Z"/><path d="M9 21h6"/>`
+  }
+];
+---
+
+<section id="servicios" class="py-24 bg-orange-100 border-b border-zinc-200 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16 space-y-2">
+      <span class="block text-xs font-bold tracking-wider text-orange-600 uppercase">OPERACIONES</span>
+      <h2 class="text-3xl font-extrabold text-zinc-900 tracking-tight">Nuestras Soluciones Especializadas e Ingeniería</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+      {services.map((service) => (
+        <div class="flex gap-6 group">
+            <!-- Icono Sólido (Grande y representativo) -->
+            <div class="shrink-0">
+            <div class="w-20 h-20 bg-orange-500 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+                <!-- Aquí puedes poner tu SVG sólido -->
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" set:html={service.icon} />
+            </div>
+            </div>
+
+            <!-- Contenido -->
+            <div class="space-y-3">
+            <h3 class="text-2xl font-black text-zinc-950">{service.title}</h3>
+            
+            <p class="text-zinc-600 leading-relaxed whitespace-pre-line">
+              {service.description}
+            </p>
+            <!-- Botón -->
+            <a href="#contacto" class="inline-flex items-center text-orange-600 font-bold hover:underline">
+                {service.btnText} →
+            </a>
+            </div>
+        </div>
+        ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+---
+// Define aquí tus datos. Puedes mover esto a un archivo JSON después.
+const equipos = [
+  { nombre: 'Equipo Elevador Jaula Trepadora', unidades: 7, imagen: '/public/Images/Equipos/Equipo1.png' },
+  { nombre: 'Equipo Lanzador de Concreto', unidades: 4, imagen: '/public/Images/Equipos/Equipo2.png' },
+  { nombre: 'Compresora Diesel Sullair 375', unidades: 4, imagen: '/public/Images/Equipos/Equipo3.jpg' },
+  { nombre: 'Perforadoras Neumáticas', unidades: 44, imagen: '/public/Images/Equipos/Equipo4.png' },
+  { nombre: 'Scooptram Sandvik LH410', unidades: 1, imagen: '/public/Images/Equipos/Equipo5.jpg' },
+  { nombre: 'Jumbo Electrohidráulico Atlas Copco', unidades: 1, imagen: '/public/Images/Equipos/Equipo6.jpg' },
+
+  { nombre: 'Jumbo Electrohidráulico Atlas Copco Modelo Boomer 282', unidades: 2, imagen: '/public/Images/Equipos/Equipo7.jpg' },
+  { nombre: 'Scooptram Sandvik : ST 1.5 1.5 Yd3', unidades: 2, imagen: '/public/Images/Equipos/Equipo8.jpg' },
+  { nombre: 'Winche de 100 HP con cable', unidades: 2, imagen: '/public/Images/Equipos/Equipo9.png' },
+  { nombre: 'Equipo Retroexcavadora', unidades: 1, imagen: '/public/Images/Equipos/Equipo10.png' },
+  { nombre: 'Equipo Jumbo Muky', unidades: 1, imagen: '/public/Images/Equipos/Equipo11.png' },
+  { nombre: 'Robot lanzador de shotcrete Alpha 20', unidades: 1, imagen: '/public/Images/Equipos/Equipo12.jpg' },
+];
+---
+
+<section id= equipos class="py-20 bg-gray-200">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Título de la sección -->
+    <div class="mb-16">
+      <h2 class="text-xs font-bold text-orange-600 uppercase tracking-[0.3em] mb-4">Catálogo Técnico</h2>
+      <p class="text-4xl md:text-5xl font-black text-zinc-950">Nuestros Equipos</p>
+    </div>
+
+    <!-- Grid de Equipos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {equipos.map((equipo) => (
+        <div class="group bg-orange-200 rounded-2xl border border-zinc-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-orange-500/20 transition-all duration-500 ease-out transform hover:-translate-y-2">
+          <!-- Imagen con efecto zoom -->
+          <div class="h-64 overflow-hidden">
+            <img 
+              src={equipo.imagen} 
+              alt={equipo.nombre} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+          
+          <!-- Contenido -->
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-zinc-950 mb-2 group-hover:text-orange-600 transition-colors">
+              {equipo.nombre}
+            </h3>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-sm font-medium text-black bg-orange-400 px-3 py-1 rounded-full">
+                {equipo.unidades} Unidades
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+// src/components/Publicaciones.astro
+const publicaciones = [
+  { 
+    titulo: 'Que son y como usar los EPPS', 
+    categoria: 'Informes', 
+    imagen: '/public/Images/public1.png', 
+    link: '/public/PDF/Equipos-de-Proteccion-Personal.pdf', 
+    estilo: 'accion' 
+  },
+  { 
+    titulo: 'Guía de Seguridad Minera', 
+    categoria: 'Manuales', 
+    imagen: '/public/Images/public2.png', 
+    link: '', 
+    estilo: 'educativo' 
+  },
+];
+---
+
+<section id="publicaciones" class="py-20 bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-black text-zinc-950 mb-12">Centro de Publicaciones</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {publicaciones.map((pub) => (
+        <div class="group flex flex-col items-center">
+          
+          <!-- Contenedor de la portada -->
+          <div class="relative w-full aspect-3/4 mb-4 shadow-lg group-hover:-translate-y-2 transition-all duration-300 overflow-hidden rounded-md">
+            
+            {/* Si es estilo educativo: Fondo blanco y Teo señalando */}
+            {pub.estilo === 'educativo' && (
+              <div class="h-full bg-white flex flex-col items-center justify-center p-4">
+                <img src={pub.imagen} alt={pub.titulo} class="w-full h-full object-cover" />
+              </div>
+            )}
+
+            {/* Si es estilo acción: Fondo foto y Teo en acción */}
+            {pub.estilo === 'accion' && (
+              <div class="h-full relative">
+                <img src={pub.imagen} alt={pub.titulo} class="w-full h-full object-cover" />
+              </div>
+            )}
+
+            <!-- Botón de descarga oculto -->
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+              <a 
+                href={pub.link} 
+                download 
+                target="_blank" 
+                class="bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-sm"
+              >
+                Descargar
+              </a>
+            </div>
+          </div>
+          
+          <h3 class="text-sm font-semibold text-zinc-800 text-center">{pub.titulo}</h3>
+          <span class="text-xs text-orange-600 uppercase tracking-widest mt-1">{pub.categoria}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
