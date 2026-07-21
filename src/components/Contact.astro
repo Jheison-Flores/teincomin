@@ -1,14 +1,14 @@
 ---
 const contactInfo = {
   address: 'Car. Carretera Central Km 17 Mza. e Lote. 1 Asc. Asociacion Praderas de Pa (a 2 Cdra del Paradero de Huaycan)',
-  email: 'floresdeiner2003@gmail.com',
+  email: 'Teincomin@gmail.com',
   hours: 'Lun - Vie: 8:00 AM - 6:00 PM / Sáb: 8:00 AM - 1:00 PM',
 };
 ---
 
 <section id="contacto" class="py-24 bg-zinc-50 border-b border-zinc-200 scroll-mt-20">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
       
       <!-- Columna Izquierda: Información -->
       <div class="lg:col-span-5 space-y-8">
@@ -42,10 +42,8 @@ const contactInfo = {
 
       <!-- Columna Derecha: Formulario Técnico -->
       <div class="lg:col-span-7 bg-white p-8 border border-zinc-200 rounded-sm shadow-xs">
-        <!-- AQUÍ SE CAMBIÓ EL FORMULARIO PARA QUE FUNCIONE -->
         <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
           
-          <!-- REEMPLAZA TU_CLAVE_AQUI CON TU CLAVE REAL DE WEB3FORMS -->
           <input type="hidden" name="access_key" value="fc688934-e146-4f64-841e-27d5dfaa68c0">
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -83,6 +81,22 @@ const contactInfo = {
           </button>
         </form>
       </div>
+
     </div>
+
+    <!-- Mapa Grande Centrado (Ancho completo del contenedor) -->
+    <div class="w-full h-100 border border-zinc-200 rounded-sm overflow-hidden shadow-xs">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d378.59106925220607!2d-76.83689944630105!3d-11.998843764663064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c371500babeb%3A0x3457ab460c8f9b7!2sTEINCOMIN%20S.A.C.!5e0!3m2!1ses-419!2spe!4v1784647827836!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+        width=100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de Teincomin">
+      </iframe>
+    </div>
+
   </div>
 </section>
